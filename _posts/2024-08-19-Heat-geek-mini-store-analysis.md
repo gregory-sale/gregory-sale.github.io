@@ -145,7 +145,7 @@ Having built the model, the first step is to validate it. The video unfortunatel
 
 The graph flashed up at [13:30](https://youtu.be/a1XGBmBLUnA?si=Ff3fn_ceJqwVNxH7&t=810) is very useful however. Firstly we can work out which model he is using by looking at the preheating portion:
 $$
-Q = Pt = mc\Delta T
+Q = Pt = mc\Delta T \\
 \sim 8kW \times 30 min = m \times 4.184 kJ/kg.K \times 32 K
 $$
 
@@ -200,27 +200,4 @@ Lets construct
 
 
 Absolute quantity of electricity at a given COP - could us lots of energy, efficiently, or low energy use, inefficiently
-
-
-
-
-
-
-
-
-
-
-
-
-A crash course in how heat pumps get sized
-
-1.  The MCS guidelines set out the requirements to size and install heat pumps, and they must be followed to be eligible for the £7500 government grant. There's constant debate on whether they are fully fit for purpose but the principles are at least sound…
-2.  This assumes all the rooms in your house needs to be at a comfy temperature. Rooms like bathrooms are a little warmer.
-3.  Then assume it’s a very cold day outside (whether you need all your rooms to be comfy on a once in a decade cold spell I am not sure…)
-4.  Calculate the heat loss of your house. This is all done at steady state which makes the maths a lot easier. This is a power - expressed in Watts - the rate of heat loss (rate, so it's a power) must equal the heat input by the heating system to keep a constant temperature.
-5.  Heat power flowing through a wall can be calculated using $$ Q = UA\Delta T $$ where `A` is area, `U` is the overall heat transfer coefficient, and `ΔT` is the temperature difference between the hot and cold side. We can see the heat transfer is greater if any one of those is bigger. Better / thicker insulation will lower `U`, and therefore `Q`.
-6.  The rate of air replacement is also considered. If hot air flows out and cold air flows in, this is  (from an energy perspective) the same as stationary air losing heat.
-7.  Now you have calculated the power requirement to hold your house at a nice temp on a super cold day, you can use this to pick your heat pump size.  Power will also have an effect on your "heat from cold" time. 
-8.  A shower commonly requires 15 -20 kW of energy. Therefore a hot water tank is an obvious next step, we can pick a volume for how much hot water we would like on hand at any time (e.g. 150L) and we can check if the reheat time is acceptable. If a bit long for the residents liking, they might wish to go up a heat pump size.
-
 
