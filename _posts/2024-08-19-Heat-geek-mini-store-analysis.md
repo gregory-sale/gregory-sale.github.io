@@ -139,6 +139,8 @@ After plenty of preamble we're finally ready to take a good look at the mini sto
 
 The explanation of this system is perhaps simpler than the previous ones - the "radiator water" flows from the heat pump into the tank. When hot water is requested, mains cold water flows through the coil and is heated from this thermal store. Within a couple of minutes the heat pump should detect the store temperature is dropping and will switch on to try to maintain the tank temperature. The store alone is not very big and the system does quite heavily rely on concurrent heat input from the heat pump. As such it relies heavily on a large high performance coil, which is likely why no one has widely commercialised such a system yet.
 
+IMAGE
+
 I'm going to assume a 7 kW Areotherm plus heat pump (matching the video). The model is built such that the tank is assumed to have a linear temperature gradient at all times, cooling the bottom first, and then depleting the top temperature when the bottom reaches the inputted heat exchanger "pinch" (5°C difference as a minimum to ensure heat can flow).
 
 The datasheet indicates their specifications are calculated with the heat pump coming online 150 seconds after the shower starts. In reality this is a 3°C hysteresis trigger (i.e. the pump triggers when 3°C below target) but will depend on heat pump circuit volume, so I have kept the time delay.
@@ -146,6 +148,9 @@ The datasheet indicates their specifications are calculated with the heat pump c
 Having built the model, the first step is to validate it. The video unfortunately did show some information, but left out lots of specifics. This, I assume, was so not to over-promise.
 
 The graph flashed up at [13:30](https://youtu.be/a1XGBmBLUnA?si=Ff3fn_ceJqwVNxH7&t=810) is very useful however. Firstly we can work out which model he is using by looking at the preheating portion:
+
+SCREENGRAB1
+
 $$
 Q = Pt = mc\Delta T \\
 \sim 8kW \times 30 min = m \times 4.184 kJ/kg.K \times 32 K
@@ -153,7 +158,9 @@ $$
 
 Giving `m` = 107.5 L. So he is using the FAT store (110 L).
 
-Finally, the other important parameter is the heat exchanger. We know the surface area, but the U value is going to be a pretty big guess. Shell and tube heat exchangers are in the region of 350 -1500, but this lacks fast tank side fluid flow, which will limit heat transfer. We can pick 500 W/m2.K as a baseline, assuming all other features are well optimised for heat transfer.
+We can also roughly infer the tank temperature at the top (the flow from the heat pump) and the bottom of the tank (the return flow to the heat pump).
+
+Finally, the other important parameter is the heat exchanger. We know the surface area, but the U value is going to be a pretty big guess. Shell and tube heat exchangers are in the region of 350 -1500, but this lacks fast tank side fluid flow, which will limit heat transfer. We can pick 500 W/m<sup>2</sup>.K as a baseline, assuming all other features are well optimised for heat transfer.
 
 Running the simulation using the following logic
 
@@ -162,7 +169,7 @@ Running the simulation using the following logic
 3.  Flow is requested. The temperature of hot and cold water sets the ratio required, and the outflow from the tank.
 4.  Water is heated from cold to the exit flow temperature. This power input Q=mcdeltaT, is mirrored by a power out of the water vessel. This power out leads to an average temperature reduction. However we initially keep the top of the tank constant and realise the temperature drop by reducing the tank bottom temperature.
 5.  After 150s the heat pump kicks in and starts delvering power to the tank. This slows the average temperature reduction.
-6.  HX heat transfer is a function of only U,A, and the temperature differences at either end. Since we have set one end (X, in step 2) and know the incoming mains water temp, we can solve for the limiting case for the lowest temperature in the bottom of the tank, where the heat exchanger heat transfer equals the demand power.
+6.  HX heat transfer is a function of only U, A, and the temperature differences at either end. Since we have set one end (X, in step 2) and know the incoming mains water temp, we can solve for the limiting case for the lowest temperature in the bottom of the tank, where the heat exchanger heat transfer equals the demand power.
 7.  Eventually the bottom of our tank reaches this limiting temperature (while the top is still at the original temperature). Heat is still being demanded from the tank so the top temperature starts to drop. We need to maintain the output pinch temperature, so the outflow temp also drops. The ratio of hot water also increases to compensate. (Note, if we draw a box around the whole system, it is raising mains water from 10°C to 40°C at a constant flow rate, it doesn’t matter whether it is doing it directly, or mixing hotter water and cold water).
 8.  When the outflow temperature drops below 40°C, it's game over.
 
@@ -171,15 +178,10 @@ Running the simulation using the following logic
 
 Matching some of the key known parameters in the video:
 
-Incoming water temp = 16°C
-
-Tank temperature = 60°C
-
-HP input power = 10 kW! (Note this is from a 7 kW Valliant, apparently it can do this outside of extreme weather - going back to my early point about confusing specifications!)
-
-Outside
-
-Flow as 8.5 L/min
+- Incoming water temp = 16°C - this assume the start of the graph above is the tank starting from cold.
+- Tank temperature = 60°C
+- HP input power = 10 kW! (Note this is from a 7 kW Valliant, apparently it can do this outside of extreme weather - going back to my early point about confusing specifications!)
+- Flow as 8.5 L/min (this is quoted in the video)
 
 The model estimates a shower time of 43 minutes. Noting that the heat pump doesn’t appear to reach 10 kW until about 10 mins into the shower, ramping from about 6 kW of heat:
 
@@ -191,19 +193,22 @@ We can roughly compare the profile of the HP flow temperature (which feeds into 
 
 A quick sensitivity analysis on the estimated parameters shows their contribution to the final result (and therefore relative error) is low as compared to other inputs.
 
-![Overall heat transfer coefficient](/assets/mini-store/coeff.png))
-![HX Pinch](/assets/mini-store/pinch.png))
+![Overall heat transfer coefficient](/assets/mini-store/coeff.png)
+![HX Pinch](/assets/mini-store/pinch.png)
 
 Lets construct a "likely worst case" using the same tank in my home. With a shower flow of 9.5 L, an incoming mains water temperature of 8°C (we tan use table J1 in the [Standard Assessment Proceedure](https://files.bregroup.com/SAP/SAP%2010.2%20-%2020-08-2021.pdf)), and the same heat pump (producing ~9.5 kW) but a lower tank temperature of 55°C for hopefully slightly improved COP.
 
 This would result in me getting a 13.5 minute shower, with tank recharge time of 12 mins. This, I think is just about acceptable even in the middle of winter! We can go further - lets se how this shower time varies as we adjust each input independantly (i.e. all the others remain constant).
 
-[Demand](/assets/mini-store/demand.png)
+![Demand](/assets/mini-store/demand.png)
 ![Heat pump power](/assets/mini-store/HPinput.png)
 ![Mains water temperature](/assets/mini-store/mainstemp.png)
 ![Tank starting temperature](/assets/mini-store/tanktemp.png)
 ![Volume](/assets/mini-store/volume.png)
 
+As we can see, limiting the flow rate would have a particularly signifcant benefit. Also it is useful to see where the various models / volumes sit in comparison to each other.
+
+Overall i
 
 
 
