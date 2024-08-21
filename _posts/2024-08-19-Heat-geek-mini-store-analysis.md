@@ -48,6 +48,7 @@ The other essential equation to be aware of is how to translate energy into wate
 For a given energy input, `Q`, we can calculate the temperature rise using
 
 $$ Q=mc\Delta T $$
+
 Where `m` is the mass of fluid (water), `c` is the specific heat capacity of water, and `ΔT` is the change in temperature (either in 
 
 And if we have a power input, recall we divide the left hand side by time, so we can divide either `m` or `ΔT` on the right hand side by time. I am going to use a dot above a quantity to show it is "per unit time".
@@ -58,7 +59,7 @@ $$ \dot{Q} = \dot{m} c \Delta T $$ for the power delivery to a given flow rate o
 
 Or
 
-$$ \dot{Q} = m c  \dot{(\Delta T)} \equiv m c \frac{dT}{dt}  $$  this will give the rate of temperature increase in a fixed mass of water.
+$$ \dot{Q} = m c  \dot{(\Delta T)} \equiv m c \frac{dT}{dt}  $$  which will give the rate of temperature increase in a fixed mass of water.
 
 For situations like these it is always useful to keep an eye on the units in your equations to ensure both consistency and insight into what the equation is actually solving for.
 
@@ -86,7 +87,7 @@ I turn my shower on. To get 9.5 L of 40°C water from 10°C cold and 55°C hot, 
 
 $$ xT_{hot}  + (1-x)T_{cold} = T_{shower} $$
 
-As such the tank is drained in XXXXXXXX seconds.
+As such the tank is drained in 39.5 minutes.
 
 But these days cylinders are unvented as mentioned earlier. What impact does this have?
 
@@ -94,7 +95,9 @@ Well the lost volume needs to be replenished by cold water. Lets assume the tank
 
 GRAPH
 
-So that's a bit disappointing. We can no longer generate a hot shower once the tank drops below 40°C. The reheat time will be a lot faster (starting a whole tank from 40°C rather than 10°C) but still feels like a step back.
+So that's a bit disappointing. We can no longer generate a hot shower once the tank drops below 40°C. The reheat time will be a lot faster (starting a whole tank from 40°C rather than 10°C) but still feels like a step back. We can make a minor improvement if 5kW heating is applied to the tank (as mentioned before we can't expect large input powers for traditional cylinders):
+
+GRAPH 2
 
 > ### An aside about grades of heat and entropy:
 >-   Not all energy is equal. Because heat always flows from higher temperatures to lower temperatures, we call heat at a higher temperature "high grade heat". If it is hotter than most things in the system, it is valuable because its energy can be transferred easily wherever we want (without a heat pump). Low grade heat on the other hand can not be readily utilised in the same way.
@@ -126,11 +129,11 @@ When ΔT is small the heat transfer from the coil into the tank may be smaller t
 3.  Increase ΔT
 
 - When the tank is cold, ΔT will be bigger and the heat pump can work at its optimal temperature range (generally 45-55°C) without worrying about the HX limitations
-- When the tank is approaching its target temperature deltaT will reduce. We can either accept the reduction in heat power into the tank, or raise the HP flow temperature - negatively affecting its COP.
+- When the tank is approaching its target temperature ΔT will reduce. We can either accept the reduction in heat power into the tank, or raise the HP flow temperature - negatively affecting its COP.
 
 The [Heat Geek super cylinder video](https://www.youtube.com/watch?v=uFBbArwAXS8) does a good job of qualitatively describing this.
 
-The reheat time should be X
+MORE MATHS HERE
 
 ## The Mini-store
 
@@ -146,9 +149,9 @@ The datasheet indicates their specifications are calculated with the heat pump c
 
 Having built the model, the first step is to validate it. The video unfortunately did show some information, but left out lots of specifics. This, I assume, was so not to over-promise.
 
-The graph flashed up at [13:30](https://youtu.be/a1XGBmBLUnA?si=Ff3fn_ceJqwVNxH7&t=810) is very useful however. Firstly we can work out which model he is using by looking at the preheating portion:
+The graph flashed up at [13:30](https://youtu.be/a1XGBmBLUnA?si=Ff3fn_ceJqwVNxH7&t=810) is very useful however. Firstly we can work out which model he is using by looking at the preheating portion (blue annotations):
 
-SCREENGRAB1
+![Data 1](/assets/mini-store/screenshot1.png)
 
 $$
 Q = Pt = mc\Delta T \\
@@ -182,13 +185,15 @@ Matching some of the key known parameters in the video:
 - HP input power = 10 kW! (Note this is from a 7 kW Valliant, apparently it can do this outside of extreme weather - going back to my early point about confusing specifications!)
 - Flow as 8.5 L/min (this is quoted in the video)
 
-The model estimates a shower time of 43 minutes. Noting that the heat pump doesn’t appear to reach 10 kW until about 10 mins into the shower, ramping from about 6 kW of heat:
+The model estimates a shower time of 43 minutes. Noting that the heat pump doesn’t appear to reach 10 kW until about 10 mins into the shower, ramping from about 6 kW of heat (orange annotations):
 
 $$ \frac{ 8kW \times  10min + 10 kW \times 30 min }{ 40 min} = 9.5 kW $$
 
 We get 39 mins, which is pretty on the money.
 
 We can roughly compare the profile of the HP flow temperature (which feeds into the top of the tank) and the HP return temperature, drawing from the bottom. This suggests the rigid fixing of top and bottom temperatures needs smoothing somewhat and bringing closer to the average, but the profile looks roughly applicable.
+
+![Tank temperature progression](/assets/mini-store/tanktempHG.png)
 
 A quick sensitivity analysis on the estimated parameters shows their contribution to the final result (and therefore relative error) is low as compared to other inputs.
 
@@ -202,7 +207,7 @@ This would result in me getting a 13.5 minute shower, with tank recharge time of
 ![Demand](/assets/mini-store/demand.png)
 ![Heat pump power](/assets/mini-store/HPinput.png)
 ![Mains water temperature](/assets/mini-store/mainstemp.png)
-![Tank starting temperature](/assets/mini-store/tanktemp.png)
+![Tank starting temperature](/assets/mini-store/tankstart.png)
 ![Volume](/assets/mini-store/volume.png)
 
 As we can see, limiting the flow rate would have a particularly signifcant benefit. Also it is useful to see where the various models / volumes sit in comparison to each other.
