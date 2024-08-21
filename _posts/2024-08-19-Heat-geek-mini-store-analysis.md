@@ -13,8 +13,7 @@ Octopus Energy offer a cheap efficient way to get a heat pump system installed, 
 
 Around this time I then watched this video from Heat Geek announcing a new product they claim can deliver domestic hot water in a vastly reduced size as compared to standard water tanks, with a greatly simplified system design too:
 
-{% include <iframe width="560" height="315" src="https://www.youtube.com/embed/a1XGBmBLUnA?si=r0ESIk1YSipSX1Xe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> %}
-
+{% include embed.html url="https://www.youtube.com/embed/a1XGBmBLUnA?si=r0ESIk1YSipSX1Xe" %}
 
 So this product officially launched last week, with relatively limited performance data available. Someone might be taking the plunge effectively blind, but despite being an ideal early adopter, I am going to need more evidence! [*Edit: As I was writing this, some people are now starting to test it. Also it looks like Heat Geek does publish a [sizing tool for their own installers](https://youtu.be/5GGCtyCeuao?si=68kHOq5DlP2agi78&t=249)... but that's no fun if you can't access it!*]
 
