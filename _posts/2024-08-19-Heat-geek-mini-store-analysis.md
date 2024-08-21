@@ -11,7 +11,10 @@ I have recently bought a house with a boiler installed last millennium. It is ac
 
 Octopus Energy offer a cheap efficient way to get a heat pump system installed, by having a relatively limited set of equipment available. I discovered that I would need noise planning permission (perhaps a discussion for another day) but also they couldn't a hot water tank anywhere. I have a 3-bed semi-detached house, with an old airing cupboard and loft, so is hardly a tiny flat - highlighting the level of infrastructure needed to enable a heat pump retrofit.
 
-Around this time I then watched this [video](https://www.youtube.com/watch?v=a1XGBmBLUnA) from Heat Geek announcing a new product they claim can deliver domestic hot water in a vastly reduced size as compared to standard water tanks, with a greatly simplified system design too.
+Around this time I then watched this video from Heat Geek announcing a new product they claim can deliver domestic hot water in a vastly reduced size as compared to standard water tanks, with a greatly simplified system design too:
+
+{% include embed.html url="[https://www.youtube.com/embed/_C0A5zX-iqM](https://www.youtube.com/watch?v=a1XGBmBLUnA)" %}
+
 
 So this product officially launched last week, with relatively limited performance data available. Someone might be taking the plunge effectively blind, but despite being an ideal early adopter, I am going to need more evidence! [*Edit: As I was writing this, some people are now starting to test it. Also it looks like Heat Geek does publish a [sizing tool for their own installers](https://youtu.be/5GGCtyCeuao?si=68kHOq5DlP2agi78&t=249)... but that's no fun if you can't access it!*]
 
