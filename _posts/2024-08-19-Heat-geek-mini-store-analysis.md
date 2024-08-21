@@ -13,12 +13,12 @@ Octopus Energy offer a cheap efficient way to get a heat pump system installed, 
 
 Around this time I then watched this video from Heat Geek announcing a new product they claim can deliver domestic hot water in a vastly reduced size as compared to standard water tanks, with a greatly simplified system design too:
 
-{% include embed.html url="[https://www.youtube.com/embed/_C0A5zX-iqM](https://www.youtube.com/watch?v=a1XGBmBLUnA)" %}
+{% include embed.html url="https://www.youtube.com/watch?v=a1XGBmBLUnA" %}
 
 
 So this product officially launched last week, with relatively limited performance data available. Someone might be taking the plunge effectively blind, but despite being an ideal early adopter, I am going to need more evidence! [*Edit: As I was writing this, some people are now starting to test it. Also it looks like Heat Geek does publish a [sizing tool for their own installers](https://youtu.be/5GGCtyCeuao?si=68kHOq5DlP2agi78&t=249)... but that's no fun if you can't access it!*]
 
-My day job is spent breaking down or building new tech - let's see if we can work this out from first principles. It also gives a good excuse to bounce around a bit of fundamental thermodynamics.
+My day job is spent breaking down or building new tech - let's see if we can work this out from first principles. It also gives a good excuse to bounce around a bit of fundamental thermodynamics... [but click here to skip to the analysis!](https://gregory.sale/2024/08/Heat-geek-mini-store-analysis/#:~:text=should%20be%20X-,The%20Mini%2Dstore,-After%20plenty%20of)
 
 > ### Tangent - oversimplification and obfuscation
 > Something that massively frustrates me as an (I would like to think) a relatively informed consumer is the mess of information currently out there for heat pumps. All parties have their sins:
