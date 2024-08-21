@@ -144,9 +144,10 @@ The datasheet indicates their specifications are calculated with the heat pump c
 Having built the model, the first step is to validate it. The video unfortunately did show some information, but left out lots of specifics. This, I assume, was so not to over-promise.
 
 The graph flashed up at [13:30](https://youtu.be/a1XGBmBLUnA?si=Ff3fn_ceJqwVNxH7&t=810) is very useful however. Firstly we can work out which model he is using by looking at the preheating portion:
-
-$$ Q = Pt = mc\Delta T $$
-$$ \sim 8kW \times 30 min = m \times 4.184 kJ/kg.K \times 32 K $$
+$$
+Q = Pt = mc\Delta T
+\sim 8kW \times 30 min = m \times 4.184 kJ/kg.K \times 32 K
+$$
 
 Giving `m` = 107.5 L. So he is using the FAT store (110 L).
 
