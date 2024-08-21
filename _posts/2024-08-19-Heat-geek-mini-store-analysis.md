@@ -33,7 +33,6 @@ This following section might be labouring the point a bit to most of those readi
 Lets remind ourselves about the difference between energy and power. Energy is "the ability to do work" and is normally measured in Joules, J. Now for our purposes here we're only really looking at a heating system for humans to be comfortable, and heat is a byproduct of storing energy in matter. In theory we could build a system to "do work" (e.g. turn into mechanical motion) as our heat energy is lost from our house, but that would be quite hard for not much gain. Indecently a heat pump is the embodiment of the reverse of this concept, where work is inputted (via and electrical pump) to move heat from a colder area into a hotter area.
 
 Power is the rate of energy transfer. So if I deliver 10kJ of energy in 5s, the power delivery (if we assume it is constant):
-
 $$ P = \frac{E}{t} $$
 
 $$ P = \frac{10kJ}{5s} = 2 kW $$
