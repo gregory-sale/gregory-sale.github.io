@@ -89,15 +89,17 @@ $$ xT_{hot}  + (1-x)T_{cold} = T_{shower} $$
 
 As such the tank is drained in 39.5 minutes.
 
+### A well mixed, unvented cylinder
+
 But these days cylinders are unvented as mentioned earlier. What impact does this have?
 
 Well the lost volume needs to be replenished by cold water. Lets assume the tank is mixed up by this outflow / inflow of water and has the same temperature throughout the whole water volume:
 
-GRAPH
+![Mixed tank](/assets/mini-store/mixedtanktemp.png)
 
 So that's a bit disappointing. We can no longer generate a hot shower once the tank drops below 40°C. The reheat time will be a lot faster (starting a whole tank from 40°C rather than 10°C) but still feels like a step back. We can make a minor improvement if 5kW heating is applied to the tank (as mentioned before we can't expect large input powers for traditional cylinders):
 
-GRAPH 2
+![Mixed tank 2](/assets/mini-store/mixedtanktemp-heated5kw.png)
 
 > ### An aside about grades of heat and entropy:
 >-   Not all energy is equal. Because heat always flows from higher temperatures to lower temperatures, we call heat at a higher temperature "high grade heat". If it is hotter than most things in the system, it is valuable because its energy can be transferred easily wherever we want (without a heat pump). Low grade heat on the other hand can not be readily utilised in the same way.
@@ -212,7 +214,9 @@ This would result in me getting a 13.5 minute shower, with tank recharge time of
 
 As we can see, limiting the flow rate would have a particularly signifcant benefit. Also it is useful to see where the various models / volumes sit in comparison to each other.
 
-Overall i
+Overall I can certainly see this making a reasonable impact in the heat pump market. So many terraced homes have the main colds water in, combi boiler and hot water output to the rest of the house all in the same corner of the home. No only is this smaller, but is able to squeeze in that same corner. Heat pump installs can still easily exceed £5k (even with the £7.5k grant) due to the labour effort in reconfiguring house plumbing. I could see a heat pump & min-store being entirely covered by the grant in the near future. The only remaining question will be if people are prepared to take the hit on hot water volume.
+
+I hope to share a copy of my calcuations spreadsheet shortly so you can see for yourself!
 
 
 
