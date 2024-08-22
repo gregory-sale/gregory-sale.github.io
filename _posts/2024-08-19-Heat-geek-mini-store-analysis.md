@@ -80,10 +80,10 @@ Let's create a simple hot water delivery model and layer on complexity to compar
 A useful trick is to draw "control volumes" around different parts of the system, and note all energy flows (normally in the form of a fluid - higher temperature is higher energy) in and out of these volumes. If you know no energy is being stored within the box (for example if we box off the heat pump) then the energy flows must balance - out must equal in. If we know there are unbalanced energy flows, then energy is being stored in the volume, such as is in the tank water.
 
 In the image below:
--`W<sub>e<\sub>` is electrical power in
--`Q<sub>a<\sub>` is heat extracted from the air
--`h<sub><\sub>` is is the "enthalpy" of the fluid flows. This is a measure of the energy contained within the fluid. Four our purposes here the easiest way is only ever to think about differences in enthalpy. So `h<sub>hw<\sub> - h<sub>cw<\sub>` is the energy imparted to the hot radiator water
--`Q<sub>HX<\sub>` is the heat transferred by the heat exchanger coil. Sometimes this heat flow is equal to the full output of the heat pump, but can be lower than the heat pump output in certain situations. We'll explore below when this becomes the rate limiting step in the reheat of the system.
+- W<sub>e<\sub> is electrical power in
+- `Q<sub>a<\sub>` is heat extracted from the air
+- `h<sub><\sub>` is is the "enthalpy" of the fluid flows. This is a measure of the energy contained within the fluid. Four our purposes here the easiest way is only ever to think about differences in enthalpy. So `h<sub>hw<\sub> - h<sub>cw<\sub>` is the energy imparted to the hot radiator water
+- `Q<sub>HX<\sub>` is the heat transferred by the heat exchanger coil. Sometimes this heat flow is equal to the full output of the heat pump, but can be lower than the heat pump output in certain situations. We'll explore below when this becomes the rate limiting step in the reheat of the system.
 
 ![Classic water cylinder layout](/assets/mini-store/hottankdiagram.png)
 *Image - Adapted from Heat Geek*
