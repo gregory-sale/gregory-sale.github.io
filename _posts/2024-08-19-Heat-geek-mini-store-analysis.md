@@ -75,7 +75,13 @@ I orginally wrote more here explaining the balance between hot water and heating
 
 ## Some simple examples
 
-Let's create a simple hot water delivery model and layer on complexity to compare how the mini store might perform. We're going to connect all of these to a monobloc heat pump (that means the whole unit is outside - with the only flows going in and out are cold and hot water, we don’t need to concern ourselves with the refrigerant loop) on one side, and a shower on the other side. I measured my shower at 9.5L/min - this seems like a very comfortable flow, not optimised with restrictors or aerators. As we'll see in a minute, decreasing your demand flow rate is one of the biggest improvements you can make for your mini-store…
+Let's create a simple hot water delivery model and layer on complexity to compare how the mini store might perform. We're going to connect all of these to a monobloc heat pump (that means the whole unit is outside - with the only flows going in and out are cold and hot water, we don’t need to concern ourselves with the refrigerant loop) on one side, and a shower on the other side. A useful trick is to draw "control volumes" around different parts of the system, and note all energy flows (normally in the form of a fluid - higher temperature is higher energy)
+
+CYLINDER IMAGE 1
+
+
+
+I measured my shower at 9.5L/min - this seems like a very comfortable flow, not optimised with restrictors or aerators. As we'll see in a minute, decreasing your demand flow rate is one of the biggest improvements you can make for your mini-store…
 
 ### Vented cylinder
 
