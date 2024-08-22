@@ -75,10 +75,18 @@ I orginally wrote more here explaining the balance between hot water and heating
 
 ## Some simple examples
 
-Let's create a simple hot water delivery model and layer on complexity to compare how the mini store might perform. We're going to connect all of these to a monobloc heat pump (that means the whole unit is outside - with the only flows going in and out are cold and hot water, we don’t need to concern ourselves with the refrigerant loop) on one side, and a shower on the other side. A useful trick is to draw "control volumes" around different parts of the system, and note all energy flows (normally in the form of a fluid - higher temperature is higher energy)
+Let's create a simple hot water delivery model and layer on complexity to compare how the mini store might perform. We're going to connect all of these to a monobloc heat pump (that means the whole unit is outside - with the only flows going in and out are cold and hot water, we don’t need to concern ourselves with the refrigerant loop) on one side, and a shower on the other side. 
 
-CYLINDER IMAGE 1
+A useful trick is to draw "control volumes" around different parts of the system, and note all energy flows (normally in the form of a fluid - higher temperature is higher energy) in and out of these volumes. If you know no energy is being stored within the box (for example if we box off the heat pump) then the energy flows must balance - out must equal in. If we know there are unbalanced energy flows, then energy is being stored in the volume, such as is in the tank water.
 
+In the image below:
+-`W<sub>e<\sub>` is electrical power in
+-`Q<sub>a<\sub>` is heat extracted from the air
+-`h<sub><\sub>` is is the "enthalpy" of the fluid flows. This is a measure of the energy contained within the fluid. Four our purposes here the easiest way is only ever to think about differences in enthalpy. So `h<sub>hw<\sub> - h<sub>cw<\sub>` is the energy imparted to the hot radiator water
+-`Q<sub>HX<\sub>` is the heat transferred by the heat exchanger coil. Sometimes this heat flow is equal to the full output of the heat pump, but can be lower than the heat pump output in certain situations. We'll explore below when this becomes the rate limiting step in the reheat of the system.
+
+![Classic water cylinder layout](/assets/mini-store/hottankdiagram.png)
+*Image - Adapted from Heat Geek*
 
 
 I measured my shower at 9.5L/min - this seems like a very comfortable flow, not optimised with restrictors or aerators. As we'll see in a minute, decreasing your demand flow rate is one of the biggest improvements you can make for your mini-store…
@@ -149,7 +157,8 @@ After plenty of preamble we're finally ready to take a good look at the mini sto
 
 The explanation of this system is perhaps simpler than the previous ones - the "radiator water" flows from the heat pump into the tank. When hot water is requested, mains cold water flows through the coil and is heated from this thermal store. Within a couple of minutes the heat pump should detect the store temperature is dropping and will switch on to try to maintain the tank temperature. The store alone is not very big and the system does quite heavily rely on concurrent heat input from the heat pump. As such it relies heavily on a large high performance coil, which is likely why no one has widely commercialised such a system yet.
 
-IMAGE
+![Mini-store layout](/assets/mini-store/ministorediagram.png)
+*Image - Heat Geek*
 
 I'm going to assume a 7 kW Areotherm plus heat pump (matching the video). The model is built such that the tank is assumed to have a linear temperature gradient at all times, cooling the bottom first, and then depleting the top temperature when the bottom reaches the inputted heat exchanger "pinch" (5°C difference as a minimum to ensure heat can flow).
 
