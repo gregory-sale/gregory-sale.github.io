@@ -220,7 +220,7 @@ We can roughly compare the profile of the HP flow temperature (which feeds into 
 
 Lets construct a "likely worst case" using the same tank in my home. With a shower flow of 9.5 L, an incoming mains water temperature of 8°C (we tan use table J1 in the [Standard Assessment Proceedure](https://files.bregroup.com/SAP/SAP%2010.2%20-%2020-08-2021.pdf)), and the same heat pump (producing ~9.5 kW) but a lower tank temperature of 55°C for hopefully slightly improved COP.
 
-This would result in me getting a 13.5 minute shower, with tank recharge time of 12 mins. This, I think, is just about acceptable even in the middle of winter! We can go further - lets se how this shower time varies as we adjust each input independantly (i.e. all the others remain constant).
+**This would result in me getting a 13.5 minute shower, with tank recharge time of 12 mins.** This, I think, is just about acceptable even in the middle of winter! We can go further - lets se how this shower time varies as we adjust each input independantly (i.e. all the others remain constant).
 
 ![Demand](/assets/mini-store/demand.png)
 ![Heat pump power](/assets/mini-store/HPinput.png)
