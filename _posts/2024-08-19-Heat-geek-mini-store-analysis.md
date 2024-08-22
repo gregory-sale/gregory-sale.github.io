@@ -7,22 +7,22 @@ categories: Energy
 
 
 
-I have recently bought a house with a boiler installed last millennium. It is actually still working (touch wood) but with a exit flue temperature of 165°C it certainly isn't efficient. We could certainly make improvements by upgrading for a modern condensing boiler (which doesn't blast all that hot air outside!!) but I'd like to walk-the-talk with all the work I do in my professional life with the energy transition. Heat pumps have a very clear role to play in the whole countries decarbonisation.
+I have recently bought a house with a boiler installed last millennium. It is actually still working (touch wood) but with a exit flue temperature of 165°C it certainly isn't efficient. We could make improvements by upgrading for a modern condensing boiler (which doesn't blast all that hot air outside!!) but I'd like to walk-the-talk with the work I do in my professional life with the energy transition. Heat pumps have a very clear role to play in the whole country's decarbonisation.
 
-Octopus Energy offer a cheap efficient way to get a heat pump system installed, by having a relatively limited set of equipment available. I discovered that I would need noise planning permission (perhaps a discussion for another day) but also they couldn't a hot water tank anywhere. I have a 3-bed semi-detached house, with an old airing cupboard and loft, so is hardly a tiny flat - highlighting the level of infrastructure needed to enable a heat pump retrofit.
+Octopus Energy offer a cheap and fast way to get a heat pump system installed, by having a relatively limited set of equipment available. I discovered that I would need noise planning permission (perhaps a discussion for another day) but also they couldn't a hot water tank anywhere. I have a 3-bed semi-detached house, with an old airing cupboard and loft, so is hardly a tiny flat - highlighting the level of infrastructure needed to enable a heat pump retrofit.
 
-Around this time I then watched this video from Heat Geek announcing a new product they claim can deliver domestic hot water in a vastly reduced size as compared to standard water tanks, with a greatly simplified system design too:
+Around this time I watched this video from Heat Geek announcing a new product they claim can deliver domestic hot water in a vastly reduced size as compared to standard water tanks, with a greatly simplified system design too:
 
 {% include embed.html url="https://www.youtube.com/embed/a1XGBmBLUnA?si=r0ESIk1YSipSX1Xe" %}
 
-So this product officially launched last week, with relatively limited performance data available. Someone might be taking the plunge effectively blind, but despite being an ideal early adopter, I am going to need more evidence! [*Edit: As I was writing this, some people are now starting to test it. Also it looks like Heat Geek does publish a [sizing tool for their own installers](https://youtu.be/5GGCtyCeuao?si=68kHOq5DlP2agi78&t=249)... but that's no fun if you can't access it!*]
+This product officially launched last week, with relatively limited performance data available. Someone might be taking the plunge effectively blind, but despite being an ideal early adopter, I am going to need more evidence! [*Edit: As I was writing this, some people are now starting to test it. Also it looks like Heat Geek does publish a [sizing tool for their own installers](https://youtu.be/5GGCtyCeuao?si=68kHOq5DlP2agi78&t=249)... but that's no fun if you can't access it!*]
 
-My day job is spent breaking down or building new tech - let's see if we can work this out from first principles. It also gives a good excuse to bounce around a bit of fundamental thermodynamics... [but click here to skip to the analysis!](https://gregory.sale/2024/08/Heat-geek-mini-store-analysis/#:~:text=should%20be%20X-,The%20Mini%2Dstore,-After%20plenty%20of)
+My day job is spent breaking down or building new tech - let's see if we can work this out from first principles. It also gives a good excuse to bounce around a bit of fundamental thermodynamics... [but click here to skip to the analysis!](https://gregory.sale/2024/08/Heat-geek-mini-store-analysis/#:~:text=The%20Mini%2Dstore-,After,-plenty%20of%20preamble)
 
 > ### Tangent - oversimplification and obfuscation
 > Something that massively frustrates me as an (I would like to think) a relatively informed consumer is the mess of information currently out there for heat pumps. All parties have their sins:
 > - manufacturers being able to quote their machine specification in a myriad of ways,
-> - installers and plumber running off "anecdata" and rules of thumb to size equipment (the statement old houses can't have heat pumps needs many caveats - it's simply a maths problem to be solved, and clearly has been messed up in the past. Once sized, it may be clear the system is cost prohibitive, which I won't disagree with)
+> - installers and plumber running off "anecdata" and rules of thumb to size equipment (the statement old houses can't have heat pumps needs many caveats - it's simply a maths problem to be solved, and clearly has been messed up in the past. Once sized, it may be clear the system is cost prohibitive, which I won't disagree with). This is something that is improving, particularly via organisations like Heat Geek
 > - and even enthusiasts online posting about their own system involves plenty of acronyms and their own brand of anecdata - their own heat pump performance, sometimes with incorrect explanations attached!
 
 
@@ -30,14 +30,13 @@ My day job is spent breaking down or building new tech - let's see if we can wor
 
 This following section might be labouring the point a bit to most of those reading this - but it is crucial to understanding the pros and cons of what follows.
 
-Lets remind ourselves about the difference between energy and power. Energy is "the ability to do work" and is normally measured in Joules, J. Now for our purposes here we're only really looking at a heating system for humans to be comfortable, and heat is a byproduct of storing energy in matter. In theory we could build a system to "do work" (e.g. turn into mechanical motion) as our heat energy is lost from our house, but that would be quite hard for not much gain. Indecently a heat pump is the embodiment of the reverse of this concept, where work is inputted (via and electrical pump) to move heat from a colder area into a hotter area.
+Lets remind ourselves about the difference between energy and power. Energy is "the ability to do work" and is normally measured in Joules, J. Now for our purposes here we're only really looking at a heating system for humans to be comfortable, and heat is a byproduct of storing energy in matter. In theory we could build a system to "do work" (e.g. turn into mechanical motion) as our heat energy is lost from our house, but that would be quite hard for not much gain. Incidentally a heat pump is the embodiment of the reverse of this concept, where work is inputted (via an electrical pump) to move heat from a colder area into a hotter area.
 
 Power is the rate of energy transfer. So if I deliver 10kJ of energy in 5s, the power delivery (if we assume it is constant):
-$$ P = \frac{E}{t} $$
 
-$$ P = \frac{10kJ}{5s} = 2 kW $$
+$$ P = \frac{E}{t} = \frac{10kJ}{5s} = 2 kW $$
 
-And we use the unit W, Watts to denote power. Also, just to confuse people, in heating and power generation the unit kWh is often used for energy. So what is happening here is a Joule is being divided by seconds to get Watts, then multiplied by hours to cancel out that division, but not going back to Joules!
+And we use the unit W, Watts to denote power. Also, just to confuse people, in heating and power generation the unit kWh is often used for energy. So what's happening here is a Joule is being divided by seconds to get Watts, then multiplied by hours to cancel out that division, but not going back to Joules!
 
 $$ 1kWh = 1kW \times 1h =\frac {1kJ}{1\cancel{s}} \times 3600 \cancel{s} = 3600kJ $$
 
@@ -49,7 +48,7 @@ For a given energy input, `Q`, we can calculate the temperature rise using
 
 $$ Q=mc\Delta T $$
 
-Where `m` is the mass of fluid (water), `c` is the specific heat capacity of water, and `ΔT` is the change in temperature (either in 
+Where `m` is the mass of fluid (water), `c` is the specific heat capacity of water, and `ΔT` is the change in temperature (either in °C or K).
 
 And if we have a power input, recall we divide the left hand side by time, so we can divide either `m` or `ΔT` on the right hand side by time. I am going to use a dot above a quantity to show it is "per unit time".
 
@@ -67,7 +66,7 @@ For situations like these it is always useful to keep an eye on the units in you
 
 A hot water tank historically was able to take a low power source, run it for a long period of time, and store up a large amount of energy (in the form of hot water). That hot water can be used up faster than it took to generate, effectively creating a large power output. Older houses might have a vented hot water tank that fills up and depletes. The massive drawback with this is that things could crawl down the vent and end up in your water… (hence the long held hesitation to not drink from the hot water tap).
 
-When the required power output (say to produce a hot shower, when mains water is at 10°C) can be delivered by your heating system, a tank is redundant - like with a combi boiler where mains water is heated directly. This simplifies the plumbing and saves space. Therefore for the last couple of decades hot water tanks have been getting ripped out.
+When the required power output (say to produce a hot shower, when mains water is at 10°C) can be delivered by your heating system, a tank is redundant - like with a combi boiler or electric shower where mains water is heated directly. This simplifies the plumbing and saves space. Therefore for the last couple of decades hot water tanks have been getting ripped out.
 
 Now, with heat pumps getting installed, hot water tanks are back. These days they are unvented cylinders (requiring expansion vessels to accommodate water expanding as it heats), but fundamentally achieve the same effect. Taking a shower is one of the highest power demands you can place on your heating system. If the heat pump were sized to meet this power demand it would (normally) be much, much larger than if it needs to meet your radiator demand, and accept it can be used to slowly heat up your hot water tank.
 
@@ -81,9 +80,9 @@ A useful trick is to draw "control volumes" around different parts of the system
 
 In the image below:
 - W<sub>e</sub> is electrical power in
-- `Q<sub>a</sub>` is heat extracted from the air
-- `h<sub></sub>` is is the "enthalpy" of the fluid flows. This is a measure of the energy contained within the fluid. Four our purposes here the easiest way is only ever to think about differences in enthalpy. So `h<sub>hw<\sub> - h<sub>cw<\sub>` is the energy imparted to the hot radiator water
-- `Q<sub>HX</sub>` is the heat transferred by the heat exchanger coil. Sometimes this heat flow is equal to the full output of the heat pump, but can be lower than the heat pump output in certain situations. We'll explore below when this becomes the rate limiting step in the reheat of the system.
+- Q<sub>a</sub> is heat extracted from the air
+- h<sub></sub> is is the "enthalpy" of the fluid flows. This is a measure of the energy contained within the fluid. Four our purposes here the easiest way is only ever to think about differences in enthalpy. So h<sub>hw<\sub> - h<sub>cw<\sub> is the energy imparted to the hot radiator water
+- Q<sub>HX</sub> is the heat transferred by the heat exchanger coil. Sometimes this heat flow is equal to the full output of the heat pump, but can be lower than the heat pump output in certain situations. We'll explore below when this becomes the rate limiting step in the reheat of the system.
 
 ![Classic water cylinder layout](/assets/mini-store/hottankdiagram.png)
 *Image - Adapted from Heat Geek*
