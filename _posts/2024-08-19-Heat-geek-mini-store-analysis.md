@@ -151,7 +151,9 @@ When ΔT is small the heat transfer from the coil into the tank may be smaller t
 
 The [Heat Geek super cylinder video](https://www.youtube.com/watch?v=uFBbArwAXS8) does a good job of qualitatively describing this.
 
-MORE MATHS HERE
+A simple demonstration of this is below comparing lower and higher performance coil in a 200L tank being heated by a 10kW source. (This quick calculation assumes the tank is mixed, which for a large tank being heated is not a bad assumption due to the natural convection currents that may be set up. Although through most of it we are limited by the 10kW heat source, a cleverly stratified tank may create useable 60°C water sooner than a mixed tank.)
+
+![Reheat](/assets/mini-store/coilreheat.png)
 
 ## The Mini-store
 
