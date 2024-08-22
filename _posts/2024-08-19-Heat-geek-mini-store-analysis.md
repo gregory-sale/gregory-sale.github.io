@@ -124,6 +124,8 @@ So that's a bit disappointing. We can no longer generate a hot shower once the t
 >
 > **So by employing stratification we can theoretically match the vented cylinder capacity if well designed.**
 
+Coils, coils, coils
+
 How long does the tank take to reheat (i.e. when can we have another shower?) That depends on quite a few more variables. The coil in the tank that transfers heat from the heat pump hot water loop into the tank water is not big (that would add cost - and why bother, it's easier to make the tank bigger and spend a long time reheating) and the heating time also depends on the temperature in that loop.
 
 Let us treat the HP as a "black box" that takes electricity in and heats water. This, at normal hot water temperatures, can be done at the full capacity of the heat pump (e.g. 7 kW). At the other end we have effectively a heat exchanger.
