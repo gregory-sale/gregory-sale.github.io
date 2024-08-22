@@ -81,7 +81,7 @@ A useful trick is to draw "control volumes" around different parts of the system
 In the image below:
 - W<sub>e</sub> is electrical power in
 - Q<sub>a</sub> is heat extracted from the air
-- h<sub></sub> is is the "enthalpy" of the fluid flows. This is a measure of the energy contained within the fluid. Four our purposes here the easiest way is only ever to think about differences in enthalpy. So h<sub>hw<\sub> - h<sub>cw<\sub> is the energy imparted to the hot radiator water
+- h<sub></sub> is is the "enthalpy" of the fluid flows. This is a measure of the energy contained within the fluid. Four our purposes here the easiest way is only ever to think about differences in enthalpy. So h<sub>hw</sub> - h<sub>cw</sub> is the energy imparted to the hot radiator water
 - Q<sub>HX</sub> is the heat transferred by the heat exchanger coil. Sometimes this heat flow is equal to the full output of the heat pump, but can be lower than the heat pump output in certain situations. We'll explore below when this becomes the rate limiting step in the reheat of the system.
 
 ![Classic water cylinder layout](/assets/mini-store/hottankdiagram.png)
@@ -110,9 +110,11 @@ Well the lost volume needs to be replenished by cold water. Lets assume the tank
 
 ![Mixed tank](/assets/mini-store/mixedtanktemp.png)
 
-So that's a bit disappointing. We can no longer generate a hot shower once the tank drops below 40°C. The reheat time will be a lot faster (starting a whole tank from 40°C rather than 10°C) but still feels like a step back. We can make a minor improvement if 5kW heating is applied to the tank (as mentioned before we can't expect large input powers for traditional cylinders):
+10 minutes! So that's a bit disappointing. We can no longer generate a hot shower once the tank drops below 40°C. The reheat time will be a lot faster (starting a whole tank from 40°C rather than 10°C) but still feels like a step back. We can make a minor improvement if 5kW heating is applied to the tank (as mentioned before we can't expect large input powers for traditional cylinders):
 
 ![Mixed tank 2](/assets/mini-store/mixedtanktemp-heated5kw.png)
+
+But also shows why some cylinders might be kept at ~70°C to increase this shower time.
 
 > ### An aside about grades of heat and entropy:
 >-   Not all energy is equal. Because heat always flows from higher temperatures to lower temperatures, we call heat at a higher temperature "high grade heat". If it is hotter than most things in the system, it is valuable because its energy can be transferred easily wherever we want (without a heat pump). Low grade heat on the other hand can not be readily utilised in the same way.
@@ -127,7 +129,7 @@ So that's a bit disappointing. We can no longer generate a hot shower once the t
 
 How long does the tank take to reheat (i.e. when can we have another shower?) That depends on quite a few more variables. The coil in the tank that transfers heat from the heat pump hot water loop into the tank water is not big (that would add cost - and why bother, it's easier to make the tank bigger and spend a long time reheating) and the heating time also depends on the temperature in that loop.
 
-Let us treat the HP as a "black box" that takes electricity in and heats water. This, at normal hot water temperatures, can be done at the full capacity of the heat pump (e.g. 7 kW). At the other end we have effectively a heat exchanger.
+Let us treat the HP as a "black box" that takes electricity in and heats water. This, at normal hot water temperatures, can be done at the full capacity of the heat pump (e.g. 10 kW). At the other end we have effectively a heat exchanger.
 
 Heat exchangers can also be modelled by
 
@@ -158,16 +160,16 @@ A simple demonstration of this is below comparing lower and higher performance c
 
 After plenty of preamble we're finally ready to take a good look at the mini store. The available data I have found comes exclusively from the tank specifications and heat Geek's own explanation video.
 
-The explanation of this system is perhaps simpler than the previous ones - the "radiator water" flows from the heat pump into the tank. When hot water is requested, mains cold water flows through the coil and is heated from this thermal store. Within a couple of minutes the heat pump should detect the store temperature is dropping and will switch on to try to maintain the tank temperature. The store alone is not very big and the system does quite heavily rely on concurrent heat input from the heat pump. As such it relies heavily on a large high performance coil, which is likely why no one has widely commercialised such a system yet.
+The explanation of this system is perhaps simpler than the previous ones - the "radiator water" flows from the heat pump into the tank. When hot water is requested, mains cold water flows through the coil and is heated from this thermal store. Within a couple of minutes the heat pump should detect the store temperature is dropping and will switch on to try to maintain the tank temperature. The store alone is not very big and the system does quite heavily rely on concurrent heat input from the heat pump. Becasue the output hot water must be heated on demand it relies heavily on a large high performance coil, which is likely why no one has widely commercialised such a system yet (in the UK...)
 
 ![Mini-store layout](/assets/mini-store/ministorediagram.png)
 *Image - Heat Geek*
 
-I'm going to assume a 7 kW Areotherm plus heat pump (matching the video). The model is built such that the tank is assumed to have a linear temperature gradient at all times, cooling the bottom first, and then depleting the top temperature when the bottom reaches the inputted heat exchanger "pinch" (5°C difference as a minimum to ensure heat can flow).
+I'm going to assume a 7 kW Areotherm Plus heat pump (matching the video) - note this can deliver up to 10 or 11 kW outside of extreme cold conditions (going back to my earlier point around confusing specifications). The model is built such that the tank is assumed to have a linear temperature gradient at all times, cooling the bottom first, and then depleting the top temperature when the bottom reaches the inputted heat exchanger "pinch" (5°C difference as a minimum to ensure heat can flow).
 
 The datasheet indicates their specifications are calculated with the heat pump coming online 150 seconds after the shower starts. In reality this is a 3°C hysteresis trigger (i.e. the pump triggers when 3°C below target) but will depend on heat pump circuit volume, so I have kept the time delay.
 
-Having built the model, the first step is to validate it. The video unfortunately did show some information, but left out lots of specifics. This, I assume, was so not to over-promise.
+Having built the model, the first step is to validate it. The video unfortunately did show some information, but left out lots of specifics. This, I assume, was so not to over-promise on performance.
 
 The graph flashed up at [13:30](https://youtu.be/a1XGBmBLUnA?si=Ff3fn_ceJqwVNxH7&t=810) is very useful however. Firstly we can work out which model he is using by looking at the preheating portion (blue annotations):
 
@@ -202,7 +204,7 @@ Matching some of the key known parameters in the video:
 
 - Incoming water temp = 16°C - this assume the start of the graph above is the tank starting from cold.
 - Tank temperature = 60°C
-- HP input power = 10 kW! (Note this is from a 7 kW Valliant, apparently it can do this outside of extreme weather - going back to my early point about confusing specifications!)
+- HP input power = 10 kW
 - Flow as 8.5 L/min (this is quoted in the video)
 
 The model estimates a shower time of 43 minutes. Noting that the heat pump doesn’t appear to reach 10 kW until about 10 mins into the shower, ramping from about 6 kW of heat (orange annotations):
@@ -215,10 +217,6 @@ We can roughly compare the profile of the HP flow temperature (which feeds into 
 
 ![Tank temperature progression](/assets/mini-store/tanktempHG.png)
 
-A quick sensitivity analysis on the estimated parameters shows their contribution to the final result (and therefore relative error) is low as compared to other inputs.
-
-![Overall heat transfer coefficient](/assets/mini-store/coeff.png)
-![HX Pinch](/assets/mini-store/pinch.png)
 
 Lets construct a "likely worst case" using the same tank in my home. With a shower flow of 9.5 L, an incoming mains water temperature of 8°C (we tan use table J1 in the [Standard Assessment Proceedure](https://files.bregroup.com/SAP/SAP%2010.2%20-%2020-08-2021.pdf)), and the same heat pump (producing ~9.5 kW) but a lower tank temperature of 55°C for hopefully slightly improved COP.
 
@@ -230,18 +228,13 @@ This would result in me getting a 13.5 minute shower, with tank recharge time of
 ![Tank starting temperature](/assets/mini-store/tankstart.png)
 ![Volume](/assets/mini-store/volume.png)
 
+A quick sensitivity analysis on the estimated parameters shows their contribution to the final result (and therefore relative error) is low as compared to other inputs.
+
+![Overall heat transfer coefficient](/assets/mini-store/coeff.png)
+![HX Pinch](/assets/mini-store/pinch.png)
+
 As we can see, limiting the flow rate would have a particularly signifcant benefit. Also it is useful to see where the various models / volumes sit in comparison to each other.
 
-Overall I can certainly see this making a reasonable impact in the heat pump market. So many terraced homes have the main colds water in, combi boiler and hot water output to the rest of the house all in the same corner of the home. No only is this smaller, but is able to squeeze in that same corner. Heat pump installs can still easily exceed £5k (even with the £7.5k grant) due to the labour effort in reconfiguring house plumbing. I could see a heat pump & min-store being entirely covered by the grant in the near future. The only remaining question will be if people are prepared to take the hit on hot water volume.
+Overall I can certainly see this making a reasonable impact in the heat pump market. So many terraced homes have the main colds water in, combi boiler and hot water output to the rest of the house all in the same corner of the home. Not only is this smaller, it's able to squeeze in that same corner. Heat pump installs can still easily exceed £5k (even with the £7.5k grant) due to the labour effort in reconfiguring house plumbing, but I could see a heat pump & mini-store being entirely covered by the grant in the near future. The only remaining question will be if people are prepared to take the hit on hot water volume.
 
 I hope to share a copy of my calcuations spreadsheet shortly so you can see for yourself!
-
-
-
-
-
-
-
-
-Absolute quantity of electricity at a given COP - could us lots of energy, efficiently, or low energy use, inefficiently
-
