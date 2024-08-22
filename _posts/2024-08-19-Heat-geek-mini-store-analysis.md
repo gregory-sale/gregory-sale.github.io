@@ -160,7 +160,7 @@ A simple demonstration of this is below comparing lower and higher performance c
 
 After plenty of preamble we're finally ready to take a good look at the mini store. The available data I have found comes exclusively from the tank specifications and heat Geek's own explanation video.
 
-The explanation of this system is perhaps simpler than the previous ones - the "radiator water" flows from the heat pump into the tank. When hot water is requested, mains cold water flows through the coil and is heated from this thermal store. Within a couple of minutes the heat pump should detect the store temperature is dropping and will switch on to try to maintain the tank temperature. The store alone is not very big and the system does quite heavily rely on concurrent heat input from the heat pump. Becasue the output hot water must be heated on demand it relies heavily on a large high performance coil, which is likely why no one has widely commercialised such a system yet (in the UK...)
+The explanation of this system is perhaps simpler than the previous ones - the "radiator water" flows from the heat pump into the tank. When hot water is requested, mains cold water flows through the coil and is heated from this thermal store. Within a couple of minutes the heat pump should detect the store temperature is dropping and will switch on to try to maintain the tank temperature. The store alone is not very big and the system does quite heavily rely on concurrent heat input from the heat pump. Because the output hot water must be heated on demand it relies heavily on a large high performance coil, which is likely why no one has widely commercialised such a system yet (in the UK...)
 
 ![Mini-store layout](/assets/mini-store/ministorediagram.png)
 *Image - Heat Geek*
