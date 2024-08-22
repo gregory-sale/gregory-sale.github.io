@@ -5,11 +5,9 @@ layout: post
 categories: Energy
 ---
 
+**I have a relatively standard 3-bed semi detached house, but am struggling to find an Air Source Heat Pump system that works for me. This new Heat Geek mini store might be the answer, but I wanted to run the numbers for my own situation before committing.**
 
-
-I have recently bought a house with a boiler installed last millennium. It is actually still working (touch wood) but with a exit flue temperature of 165°C it certainly isn't efficient. We could make improvements by upgrading for a modern condensing boiler (which doesn't blast all that hot air outside!!) but I'd like to walk-the-talk with the work I do in my professional life with the energy transition. Heat pumps have a very clear role to play in the whole country's decarbonisation.
-
-Octopus Energy offer a cheap and fast way to get a heat pump system installed, by having a relatively limited set of equipment available. I discovered that I would need noise planning permission (perhaps a discussion for another day) but also they couldn't place a hot water tank anywhere. I have a 3-bed semi-detached house, with an old airing cupboard and loft, so is hardly a tiny flat - highlighting the level of infrastructure needed to enable a heat pump retrofit.
+I am trying to replace my combi boiler from the last millenium with a new heat pump. I discovered that I would need noise planning permission (perhaps a discussion for another day) but also they couldn't place a hot water tank anywhere. I have an old airing cupboard and loft, so is hardly a tiny flat - highlighting the level of infrastructure needed to enable a heat pump retrofit.
 
 Around this time I watched this video from Heat Geek announcing a new product they claim can deliver domestic hot water in a vastly reduced size as compared to standard water tanks, with a greatly simplified system design too:
 
