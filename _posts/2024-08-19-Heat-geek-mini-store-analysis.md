@@ -7,7 +7,7 @@ categories: Energy
 
 **I have a relatively standard 3-bed semi detached house, but am struggling to find an Air Source Heat Pump system that works for me. This new Heat Geek mini store might be the answer, but I wanted to run the numbers for my own situation before committing.**
 
-I am trying to replace my combi boiler from the last millenium with a new heat pump. I discovered that I would need noise planning permission (perhaps a discussion for another day) but also they couldn't place a hot water tank anywhere. I have an old airing cupboard and loft, so is hardly a tiny flat - highlighting the level of infrastructure needed to enable a heat pump retrofit.
+I am trying to replace my combi boiler from the last millenium with a new heat pump. I discovered that I would need noise planning permission (perhaps a discussion for another day) but also that there was no good place for a hot water tank anywhere. I have an old airing cupboard and loft, so is hardly a tiny flat - highlighting the level of infrastructure needed to enable a heat pump retrofit.
 
 Around this time I watched this video from Heat Geek announcing a new product they claim can deliver domestic hot water in a vastly reduced size as compared to standard water tanks, with a greatly simplified system design too:
 
