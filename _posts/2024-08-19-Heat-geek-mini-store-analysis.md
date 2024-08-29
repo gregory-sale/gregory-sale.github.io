@@ -5,6 +5,8 @@ layout: post
 categories: Energy
 ---
 
+**UPDATE 29-AUG-2024:** You can try out my calculator for yourself [here](https://docs.google.com/spreadsheets/d/1WCcB3DztqkDQMRK-wCNCs0GgqsC7WeP8Jp_6C9Srits/edit?usp=sharing). This also includes an input to see the effect of heat recovery on your waste shower water, such as when using something like [Recoup](https://recoup.co.uk/). Thanks James for the suggestion. A grid of these heat recovery results are added at the bottom of the page - they are quite impressive and could be a great option if you are simultaneously renovating a bathroom.
+
 **I have a relatively standard 3-bed semi detached house, but am struggling to find an Air Source Heat Pump system that works for me. This new Heat Geek mini store might be the answer, but I wanted to run the numbers for my own situation before committing.**
 
 I am trying to replace my combi boiler from the last millenium with a new heat pump. I discovered that I would need noise planning permission (perhaps a discussion for another day) but also that there was no good place for a hot water tank anywhere. I have an old airing cupboard and loft, so is hardly a tiny flat - highlighting the level of infrastructure needed to enable a heat pump retrofit.
@@ -218,7 +220,7 @@ We can roughly compare the profile of the HP flow temperature (which feeds into 
 
 Lets construct a "likely worst case" using the same tank in my home. With a shower flow of 9.5 L, an incoming mains water temperature of 8°C (we tan use table J1 in the [Standard Assessment Proceedure](https://files.bregroup.com/SAP/SAP%2010.2%20-%2020-08-2021.pdf)), and the same heat pump (producing ~9.5 kW) but a lower tank temperature of 55°C for hopefully slightly improved COP.
 
-**This would result in me getting a 13.5 minute shower, with tank recharge time of 12 mins.** This, I think, is just about acceptable even in the middle of winter! We can go further - lets se how this shower time varies as we adjust each input independantly (i.e. all the others remain constant).
+**This would result in me getting a 13.5 minute shower, with tank recharge time of ~~12~~ 19 mins.** [edit: 12 minutes to reheat from 40, but we can take the average temperature lower than this.] This, I think, is just about acceptable even in the middle of winter! We can go further - lets se how this shower time varies as we adjust each input independantly (i.e. all the others remain constant).
 
 ![Demand](/assets/mini-store/demand.png)
 ![Heat pump power](/assets/mini-store/HPinput.png)
@@ -236,3 +238,7 @@ As we can see, limiting the flow rate would have a particularly signifcant benef
 Overall I can certainly see this making a reasonable impact in the heat pump market. So many terraced homes have the main colds water in, combi boiler and hot water output to the rest of the house all in the same corner of the home. Not only is this smaller, it's able to squeeze in that same corner. Heat pump installs can still easily exceed £5k (even with the £7.5k grant) due to the labour effort in reconfiguring house plumbing, but I could see a heat pump & mini-store being entirely covered by the grant in the near future. The only remaining question will be if people are prepared to take the hit on hot water volume.
 
 I hope to share a copy of my calcuations spreadsheet shortly so you can see for yourself!
+
+**UPDATE 29-AUG-2024 continued:** I've shared the link at the top of the page, and here is the grid of shower times as we vary the temperature of the mains water (flowing through the Mini-store) and the "cold" water flowing into the shower mixer. I have used quotes there as the cold water can no be preheated using the warm water that's just flowing out the drain. Having pre-warmed cold water means a smaller proportion needs to come from the hot side, lowering demand on the Mini-store. This has a very similar effect to just lowering the shower flow rate. Could be well worthwhile depending on what the heat recovery products claim!
+
+![Recovered heat grid](/assets/mini-store/grid.png)
