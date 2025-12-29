@@ -22,9 +22,10 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {file: "README.md", title: "About me"}
   
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "gregory2996@gmail.com"}
+  - {title: Mail, icon: envelope, url: "mailto:gregory2996@gmail.com"}
   - {title: Github, icon: github, url: "https://github.com/gregory-sale"}
   - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/gregory-sale/"}
+  - {title: Patents, icon: lightbulb, url: "https://patents.google.com/?inventor=Gregory+SALE"}
 
 comments:
 #  disqus_shortname: ""    # see https://disqus.com/
