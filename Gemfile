@@ -10,3 +10,7 @@ gem "bigdecimal"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
 end
+
+group :development do
+  gem 'wdm', '>= 0.1.0', platforms: [:mswin, :mingw, :x64_mingw]
+end
