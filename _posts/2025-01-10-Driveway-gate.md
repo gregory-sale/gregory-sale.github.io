@@ -63,15 +63,13 @@ This still took perhaps six hours to do all joints. I'm not sure it was worth it
 
 <div class="two-up">
   <div class="cell" markdown="1">
-  ![Alt text 1]({{ 'assets\gate\PXL_20250101_135311839.jpg' | relative_url }})
+  ![Before]({{ 'assets\gate\PXL_20250101_135311839.jpg' | relative_url }})
 
-  _Before_
   </div>
 
   <div class="cell" markdown="1">
-  ![Alt text 2]({{ 'assets\gate\PXL_20250101_135514282.MP.jpg' | relative_url }})
+  ![After]({{ 'assets\gate\PXL_20250101_135514282.MP.jpg' | relative_url }})
 
-  _After_
   </div>
 </div>
 
